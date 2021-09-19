@@ -1576,6 +1576,11 @@ skip_reuse:
 			srv_conn->send_proxy_ofs = 1;
 			srv_conn->flags |= CO_FL_SOCKS4;
 		}
+
+		if (srv && (srv->flags & SRV_F_PROXY_TUNNEL)) {
+			srv_conn->send_proxy_ofs = 1; /* TODO (brent maybe dont reuse this */
+			srv_conn->flags |= CO_FL_PROXY_TUNNEL;
+		}
 	}
 	else {
 		s->flags |= SF_SRV_REUSED;

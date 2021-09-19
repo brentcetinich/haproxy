@@ -35,6 +35,7 @@
 #define TCPCHK_OPT_DEFAULT_CONNECT 0x0008  /* Do a connect using server params */
 #define TCPCHK_OPT_IMPLICIT        0x0010  /* Implicit connect */
 #define TCPCHK_OPT_SOCKS4          0x0020  /* check the connection via socks4 proxy */
+// TODO add HTTP PROXY Check
 
 enum tcpcheck_send_type {
 	TCPCHK_SEND_UNDEF = 0,  /* Send is not parsed. */
